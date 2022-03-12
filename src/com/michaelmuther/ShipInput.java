@@ -196,13 +196,13 @@ public class ShipInput extends Input{
         int[] indices = proposedCells(firstCoordinates, secondCoordinates);
         // checks to see if the coordinates are horizontally aligned, if not, then different for loop
         if (coordinatesHorizontallyAligned(firstCoordinates, secondCoordinates)) {
-            for (int index : indices) { // refactor to enhanced for loop
+            for (int index : indices) {
                 if (shipBoardArray[firstCoordinates[0]][index] != '~') {
                     return false;
                 }
             }
         } else {
-            for (int index : indices) { // refactor to enhanced for loop
+            for (int index : indices) {
                 if (shipBoardArray[index][firstCoordinates[1]] != '~') {
                     return false;
                 }

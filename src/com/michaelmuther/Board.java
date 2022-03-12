@@ -17,17 +17,21 @@ public class Board {
         }
     }
 
-    public void boardPrint() {
-        final char space = ' ';
+    public void printShipBoard() {
+        final char SPACE = ' ';
+        final char FOG_OF_WAR = '~';
+        final char SHIP_CELL = 'O';
         final String headerRow = "  1 2 3 4 5 6 7 8 9 10";
         final char[] headerCol = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.println(headerRow);
         for (int i = 0; i < rows; i++) {
             System.out.print(headerCol[i]);
-            System.out.print(space);
+            System.out.print(SPACE);
             for (int j = 0; j < columns; j++) {
-                System.out.print(boardArray[i][j]);
-                System.out.print(space);
+                char temp = boardArray[i][j];
+                temp = temp == 'A' || temp == 'B' || temp == 'C' || temp == 'D' || temp == 'S' ? SHIP_CELL : FOG_OF_WAR;
+                System.out.print(temp);
+                System.out.print(SPACE);
             }
             System.out.println();
         }

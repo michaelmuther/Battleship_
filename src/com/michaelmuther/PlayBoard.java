@@ -2,7 +2,15 @@ package com.michaelmuther;
 
 public class PlayBoard extends Board{
 
-    final char HIT = 'X';
-    final char MISS = 'M';
+
+
+    char[][] boardArray;
+
+    public PlayBoard (char[][] boardArray) {
+        this.boardArray = boardArray;
+        ShotInput shotInput = new ShotInput(boardArray);
+
+    }
+
 
 }

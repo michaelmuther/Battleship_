@@ -9,12 +9,12 @@ public class Player {
     private boolean isFirst;
     final String playerName;
     private ShipBoard shipBoard;
-//    private PlayBoard playBoard;
+    private PlayBoard playBoard;
 
     public Player(boolean isFirst, String playerName) {
         this.isFirst = isFirst;
         this.playerName = playerName;
         this.shipBoard = new ShipBoard();
-//        this.playBoard = new PlayBoard();
+        this.playBoard = new PlayBoard(shipBoard.getBoard());
     }
 }
