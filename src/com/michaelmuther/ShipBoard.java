@@ -36,7 +36,7 @@ public class ShipBoard extends Board{
     public void printShipBoard() {
         final char SPACE = ' ';
         final char FOG_OF_WAR = '~';
-        final char SHIP_CELL = '0';
+        final char SHIP_CELL = 'O';
         final String headerRow = "  1 2 3 4 5 6 7 8 9 10";
         final char[] headerCol = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.println(headerRow);

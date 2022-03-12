@@ -10,7 +10,7 @@ public class ShipInput extends Input{
     private Ship[] ships;
 
     final char BUFFER_CELL = '#';
-    final char SHIP_CELL = '0';
+    final char SHIP_CELL = 'O';
 
     final String[][] board = {
             {"A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10"},
@@ -40,11 +40,11 @@ public class ShipInput extends Input{
     }
 
     public void enterShipCoordinates() {
-        final String MENU_INPUT_1 = "Enter the coordinates of the %s (%d cells):\n";
+        final String MENU_INPUT_1 = "Enter the coordinates of the %s (%s cells):\n";
         for (Ship ship : ships) {
             boardPrintFinal();
             boolean validEntry = false;
-            System.out.printf("\n" + MENU_INPUT_1 + "\n", ship.getName(), ship.getLength()); // text for coordinate input
+            System.out.printf("\n" + MENU_INPUT_1, ship.getName(), ship.getLength()); // text for coordinate input
             do { // do loop for validEntry
                 boolean horizontal = false;
                 boolean vertical = false;
@@ -179,6 +179,7 @@ public class ShipInput extends Input{
                     }
                 }
             } while (!validEntry); // end do while loop for entry of ships
+//            boardPrintFinal();
         } // end enhanced for loop of ships array
         System.out.println();
     } // end enterShipCoordinates
@@ -321,7 +322,7 @@ public class ShipInput extends Input{
                 if(shipBoardArray[i][j] == '#') {
                     System.out.print('~');
                 } else if (shipBoardArray[i][j] != '~') {
-                    System.out.print('0');
+                    System.out.print('O');
                 } else {
                     System.out.print('~');
                 }
